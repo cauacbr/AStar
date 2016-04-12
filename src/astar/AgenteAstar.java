@@ -1,5 +1,10 @@
 package astar;
 
+/*
+@Cauã Barneze Rocha
+@Rafael Henrique Zaleski
+*/
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;

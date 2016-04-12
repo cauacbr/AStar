@@ -1,5 +1,10 @@
 package astar;
 
+/*
+@Cauã Barneze Rocha
+@Rafael Henrique Zaleski
+*/
+
 import java.util.HashMap;
 import java.util.Map;
 public class Aestrela {

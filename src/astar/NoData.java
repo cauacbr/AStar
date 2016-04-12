@@ -1,5 +1,10 @@
 package astar;
 
+/*
+@Cauã Barneze Rocha
+@Rafael Henrique Zaleski
+*/
+
 import java.util.Map;
 final class NoData<T> {
 
