@@ -413,7 +413,7 @@ public class AStar<T> {
          
         AStar<String> aStar = new AStar<String>(graph);
         
-        for (String path : aStar.astar("A", "H")) {
+        for (String path : aStar.astar("", "H")) {
             System.out.println(path);
         }
     }
