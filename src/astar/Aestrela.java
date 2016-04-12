@@ -18,8 +18,7 @@ public class Aestrela {
 
     public static void main(String[] args) {
         Map<String, Map<String, Double>> heuristica = new HashMap<String, Map<String, Double>>();
-        // map for A  
-        int h = 2;
+        int h = 2; //seleciona a Heuristica (1 ou 2)
         Map<String, Double> mapaHeuristica = new HashMap<String, Double>();
 
         if (h == 1) {
@@ -78,14 +77,7 @@ public class Aestrela {
         grafo.adicionaFronteira("G", "H", 12);
 
         AgenteAstar<String> aEstrela = new AgenteAstar<String>(grafo);
-
-        /*Scanner sc = new Scanner(System.in);
-        System.out.print("Digite o estado inicial: ");
-        String inicio = sc.nextLine().toUpperCase();
-        System.out.print("Digite o estado final: ");
-        String fim = sc.nextLine().toUpperCase();
-        System.out.println("Estado inicial: "+ inicio + "\nEstado Final: " + fim);*/
-        String inicio = "A", fim = "H";
+        String inicio = "A", fim = "H"; //seleciona estado inicial e final
         System.out.println("Estado inicial: " + inicio + "\nEstado Final: " + fim);
 
         for (String caminho : aEstrela.astar(inicio, fim)) {
