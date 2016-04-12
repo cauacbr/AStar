@@ -66,6 +66,7 @@ public class AStar<T> {
 
         while (!openQueue.isEmpty()) {
             final NodeData<T> nodeData = openQueue.poll();
+            System.out.println("No para expansao: " + nodeData.getNodeId().toString());
 
             if (nodeData.getNodeId().equals(destination)) {
                 return path(path, destination);
@@ -75,6 +76,7 @@ public class AStar<T> {
 
             for (Entry<NodeData<T>, Double> neighborEntry : graph.edgesFrom(nodeData.getNodeId()).entrySet()) {
                 NodeData<T> neighbor = neighborEntry.getKey();
+                System.out.println("No explorado: " + neighbor.getNodeId().toString());
 
                 if (closedList.contains(neighbor)) {
                     continue;
@@ -246,9 +248,8 @@ public class AStar<T> {
 
          
         AStar<String> aStar = new AStar<String>(graph);
-        
         for (String path : aStar.astar("A", "H")) {
-            System.out.println(path);
+            System.out.print(path + " -> ");
         }
     }
 }
