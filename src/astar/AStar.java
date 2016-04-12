@@ -76,6 +76,7 @@ public class AStar<T> {
                 System.out.println("No explorado: " + neighbor.getNodeId().toString());
 
                 if (closedList.contains(neighbor)) {
+                    System.out.println("No " + neighbor.getNodeId().toString() + " ja visitado");
                     continue;
                 }
 
@@ -84,7 +85,8 @@ public class AStar<T> {
 
                 if (tentativeG < neighbor.getG()) {
                     neighbor.setG(tentativeG);
-                    neighbor.calcF(destination);
+                    //neighbor.calcF(destination);
+                    neighbor.calcF(neighbor.getNodeId());
 
                     path.put(neighbor.getNodeId(), nodeData.getNodeId());
                     if (!openQueue.contains(neighbor)) {

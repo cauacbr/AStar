@@ -41,6 +41,7 @@ final class NodeData<T> {
     public void calcF(T destination) {
         this.h = heuristic.get(destination);
         //System.out.println("Heuristica: " + this.h + "\n" + heuristic.toString());
+        System.out.println("Heuristica: " + this.h);
         this.f = g + h;
     }
 

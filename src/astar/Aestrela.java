@@ -7,8 +7,10 @@ http://codereview.stackexchange.com/questions/38376/a-search-algorithm
  */
 package astar;
 
+import static java.time.Clock.system;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  *
@@ -20,13 +22,13 @@ public class Aestrela {
         Map<String, Map<String, Double>> heuristic = new HashMap<String, Map<String, Double>>();
         // map for A    
         Map<String, Double> map = new HashMap<String, Double>();
-        map.put("A", 0.0);
-        map.put("B", 0.0);
-        map.put("C", 0.0);
-        map.put("D", 0.0);
-        map.put("E", 0.0);
-        map.put("F", 0.0);
-        map.put("G", 0.0);
+        map.put("A", 32.0);
+        map.put("B", 19.0);
+        map.put("C", 25.0);
+        map.put("D", 10.0);
+        map.put("E", 8.0);
+        map.put("F", 6.0);
+        map.put("G", 12.0);
         map.put("H", 0.0);
 
         heuristic.put("A", map);
@@ -62,9 +64,20 @@ public class Aestrela {
         graph.addEdge("G", "H", 12);
 
         AStar<String> aStar = new AStar<String>(graph);
-        for (String path : aStar.astar("A", "H")) {
+        
+        /*Scanner sc = new Scanner(System.in);
+        System.out.print("Digite o estado inicial: ");
+        String inicio = sc.nextLine().toUpperCase();
+        System.out.print("Digite o estado final: ");
+        String fim = sc.nextLine().toUpperCase();
+        System.out.println("Estado inicial: "+ inicio + "\nEstado Final: " + fim);*/
+        String inicio = "A", fim = "H";
+        System.out.println("Estado inicial: "+ inicio + "\nEstado Final: " + fim);
+        
+        for (String path : aStar.astar(inicio, fim)) {
             System.out.print(" -> " +path);
         }
+        System.out.println("");
         
     }
 
