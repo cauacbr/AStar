@@ -29,9 +29,7 @@ final class NoData<T> {
     }
 
     public void calculaF(T destino) {
-        this.h = heuristica.get(destino);
-        //System.out.println("Heuristica: " + this.h + "\n" + heuristica.toString());
-        //System.out.println("Heuristica: " + this.h);        
+        this.h = heuristica.get(destino);   
         this.f = g + h;
         System.out.println("g(n): " + this.g);
         System.out.println("h(n): " + this.h);
