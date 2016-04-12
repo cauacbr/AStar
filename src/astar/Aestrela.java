@@ -125,6 +125,7 @@ public class Aestrela {
         graph.addNode("G");
         graph.addNode("H");
 
+        /*
         graph.addEdge("A", "B", 20);
         graph.addEdge("A", "C", 20);
         graph.addEdge("B", "A", 20);
@@ -146,10 +147,23 @@ public class Aestrela {
         graph.addEdge("H", "C", 25);
         graph.addEdge("H", "E", 8);
         graph.addEdge("H", "F", 6);
-        graph.addEdge("H", "G", 12);
+        graph.addEdge("H", "G", 12);*/
+        
+        
+        graph.addEdge("A", "B", 20);
+        graph.addEdge("A", "C", 20);
+        graph.addEdge("B", "D", 10);
+        graph.addEdge("B", "F", 19);
+        graph.addEdge("C", "G", 12);
+        graph.addEdge("C", "H", 25);
+        graph.addEdge("D", "E", 5);
+        graph.addEdge("D", "F", 7);
+        graph.addEdge("E", "H", 8);
+        graph.addEdge("F", "H", 6);
+        graph.addEdge("G", "H", 12);
 
         AStar<String> aStar = new AStar<String>(graph);
-        for (String path : aStar.astar("A", "H")) {
+        for (String path : aStar.astar("C", "H")) {
             System.out.print(path + " -> ");
         }
     }
